@@ -113,7 +113,7 @@ const data = [
 
 */
 
-function createNewsfeed(title, date, p1, p2, p3){
+function createNewsfeed(index){
   const article = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
@@ -121,6 +121,13 @@ function createNewsfeed(title, date, p1, p2, p3){
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
   const btnBox = document.createElement('span');
+
+  title.textContent = index.title;
+  date.textContent = index.date;
+  p1.textContent = index.p1;
+  p2.textContent = index.p2;
+  p3.textContent = index.p3;
+  btnBox.textcontent = "button";
 
   article.classList.add('article');
   title.classList.add('h2');
@@ -141,11 +148,7 @@ function createNewsfeed(title, date, p1, p2, p3){
   article.appendChild(btnOpen);
   article.appendChild(btnClosed);
 
-  title.textContent = title;
-  date.textContent = date;
-  p1.textContent = p1;
-  p2.textContent = p2;
-  p3.textContent = p3;
-
   return article;
 }
+
+const articleBox = document.querySelector(".articles");
