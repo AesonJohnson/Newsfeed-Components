@@ -126,7 +126,21 @@ function createNewsfeed(title, date, p1, p2, p3){
   title.classList.add('h2');
   date.classList.add('date');
   btnBox.classList.add('expandButton');
+  btnOpen.classList.add('close');
+  btnClosed.classListadd('close');
 
   btnOpen.textContent = '\u25bc';
   btnClosed.textContent = '\u25b2';
+
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(btnOpen);
+  article.appendChild(btnClosed);
+
+
+  return article;
 }
