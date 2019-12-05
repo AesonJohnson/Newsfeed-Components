@@ -34,6 +34,8 @@ let menuItems = [
   
 */
 
+document.querySelector('.header').appendChild(createMenu(menuItems));
+
 function createMenu(array){
   const nav = document.createElement('div');
   const ul = document.createElement('ul');
@@ -41,5 +43,7 @@ function createMenu(array){
   nav.classList.add('menu');
 
   nav.appendChild(ul);
+
+  return nav;
 
 }
