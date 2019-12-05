@@ -132,15 +132,20 @@ function createNewsfeed(title, date, p1, p2, p3){
   btnOpen.textContent = '\u25bc';
   btnClosed.textContent = '\u25b2';
 
-
   article.appendChild(title);
   article.appendChild(date);
   article.appendChild(p1);
   article.appendChild(p2);
   article.appendChild(p3);
+  article.appendChild(btnBox);
   article.appendChild(btnOpen);
   article.appendChild(btnClosed);
 
+  title.textContent = title;
+  date.textContent = date;
+  p1.textContent = p1;
+  p2.textContent = p2;
+  p3.textContent = p3;
 
   return article;
 }
