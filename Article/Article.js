@@ -117,17 +117,10 @@ function createNewsfeed(index){
   const article = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
-  const p1 = document.createElement('p');
-  const p2 = document.createElement('p');
-  const p3 = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pThree = document.createElement('p');
   const btnBox = document.createElement('span');
-
-  title.textContent = index.title;
-  date.textContent = index.date;
-  p1.textContent = index.p1;
-  p2.textContent = index.p2;
-  p3.textContent = index.p3;
-  btnBox.textcontent = "button";
 
   article.classList.add('article');
   title.classList.add('h2');
@@ -136,18 +129,31 @@ function createNewsfeed(index){
   btnOpen.classList.add('close');
   btnClosed.classListadd('close');
 
-  btnOpen.textContent = '\u25bc';
-  btnClosed.textContent = '\u25b2';
+  title.textContent = index.title;
+  date.textContent = index.date;
+  pOne.textContent = index.firstParagraph;
+  pTwo.textContent = index.secondParagraph;
+  pThree.textContent = index.thirdParagraph;
+  btnBox.textcontent = "button";
 
   article.appendChild(title);
   article.appendChild(date);
-  article.appendChild(p1);
-  article.appendChild(p2);
-  article.appendChild(p3);
+  article.appendChild(pOne);
+  article.appendChild(pTwo);
+  article.appendChild(pThree);
   article.appendChild(btnBox);
   article.appendChild(btnOpen);
   article.appendChild(btnClosed);
 
+  //BUTTON NONSENSE
+  btnOpen.textContent = '\u25bc';
+  btnClosed.textContent = '\u25b2';
+
+  btnBox.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
+
+  //RETURN
   return article;
 }
 
