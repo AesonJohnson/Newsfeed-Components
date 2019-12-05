@@ -112,3 +112,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createNewsfeed(index){
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const pOne = document.createElement('p');
+  const pTwo = document.createElement('p');
+  const pThree = document.createElement('p');
+  const btnBox = document.createElement('span');
+
+  article.classList.add('article');
+  title.classList.add('h2');
+  date.classList.add('date');
+  btnBox.classList.add('expandButton');
+  btnOpen.classList.add('close');
+  btnClosed.classListadd('close');
+
+  title.textContent = index.title;
+  date.textContent = index.date;
+  pOne.textContent = index.firstParagraph;
+  pTwo.textContent = index.secondParagraph;
+  pThree.textContent = index.thirdParagraph;
+  btnBox.textcontent = "button";
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(pOne);
+  article.appendChild(pTwo);
+  article.appendChild(pThree);
+  article.appendChild(btnBox);
+  article.appendChild(btnOpen);
+  article.appendChild(btnClosed);
+
+  //BUTTON NONSENSE
+  btnOpen.textContent = '\u25bc';
+  btnClosed.textContent = '\u25b2';
+
+  btnBox.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
+
+  //RETURN
+  return article;
+}
+
+const articleBox = document.querySelector(".articles");
